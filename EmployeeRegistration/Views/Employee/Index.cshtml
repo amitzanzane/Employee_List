@@ -1,0 +1,262 @@
+﻿
+@{
+    ViewBag.Title = "Employee List";
+}
+<style>
+    .chosen-container.chosen-container-single {
+        width: 100% !important; /* or any value that fits your needs */
+    }
+
+    .modal-dialog {
+        width: 50%;
+    }
+</style>
+<div class="content-wrapper">
+
+    <div class="container-fluid">
+
+        <div class="form-group">
+
+            <div class="form-group row">
+                <div class="col-lg-3">
+                    <h2>Employee List</h2>
+                </div>
+                <div class="col-lg-7">
+                </div>
+                <div class="col-lg-2">
+                    <a class="btn btn-primary btn-block" style="color: white;margin-top: 25px;" onclick="OpenAddModal()">Add Employee</a>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <table class="table table-bordered table-striped nowrap" id="tblEmployeeList">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Pan No</th>
+                    <th>Passport No</th>
+                    <th>Gender</th>
+                    <th>IsActive</th>
+                    <th>Profile Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            @*<tbody>
+                </tbody>*@
+        </table>
+
+        <div class="modal fade" id="addEditEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="H1"><i class="fa fa-fw fa-link"></i>Insert Update Employee</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label id="lblEmployeeCode">Employee Code</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtEmployeeCode" placeholder="Employee Code" disabled="true">
+                                    <input type="hidden" id="hdnRow_Id">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>First Name <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtFirstName" onkeypress="return isLetter(event,'txtFirstName')" placeholder="First Name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Last Name</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtLastName" onkeypress="return isLetter(event,'txtLastName')" placeholder="Last Name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Email Address <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtEmailAddress" onblur="return uniqueValidation('txtEmailAddress');" placeholder="Email Address">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label id="lblEmailID"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Mobile Number <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtMobileNumber" onblur="return uniqueValidation('txtMobileNumber');" maxlength="15" onkeypress="return isAmountNumber(event,'txtMobileNumber')" placeholder="Mobile Number">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label id="lblMobile"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Pan Number <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control text-uppercase" id="txtPanNumber" onblur="return uniqueValidation('txtPanNumber');" maxlength="10" onkeypress="return isPANKey(event,'txtPanNumber')" placeholder="Pan Number">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label id="lblPan"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Passport Number <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtPassportNumber" onblur="return uniqueValidation('txtPassportNumber');" placeholder="Passport Number">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label id="lblPassport"></label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Date Of Birth <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtDOB" placeholder="Date Of Birth">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Date Of Joinee</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" id="txtDOJ" placeholder="Date Of Joinee">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Country <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    @*<select class="form-control" id="ddlCountry" onchange="BindStateDropdown();ClearCityDropdown()">*@
+                                    <select class="form-control" id="ddlCountry" onchange="BindStateDropdown()">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>State <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <select class="form-control" id="ddlState" onchange="BindCityDropdown()">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>City <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <select class="form-control" id="ddlCity">
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Profile Picture</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type='file' title="Browse" id='profileUpload' class="form-control" accept="image/png, image/jpg, image/jpeg" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Gender <span style="color:red">*</span></label>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="radio" id="male" name="gender" value="1">
+                                    <label for="html">Male</label>
+                                </div>
+                                <div class="col-lg-2">
+                                    <input type="radio" id="female" name="gender" value="0">
+                                    <label for="css">Female</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label>Is Active</label>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input type="checkbox" id="chkIsActive" name="active" value="1">
+                                    <label for="active"> Active</label><br>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-offset-3 col-lg-4">
+                                    <a id="btnAddEdit" class="btn btn-primary btn-block" style="color: white;" onclick="AddEditEmployee()">Add</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <h5><label>Note:- <span style="color:red">*</span> mark fields are mandatory</label></h5>
+                            @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>*@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @*<link href="~/Content/datatables/jquery.datatables.min.css" rel="stylesheet" />*@
+    <link href="~/Content/jquery-ui/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="~/Content/sweet alert/sweetalert.css" rel="stylesheet" />
+
+    @section scripts{
+        <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        @*<script src="~/Content/datatables/jquery.dataTables.min.js"></script>*@
+        <script src="~/Content/js/Employee.js"></script>
+        <script src="~/Content/js/String.js"></script>
+        <script src="~/Content/jquery-ui/jquery-ui.js"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+        <script src="~/Content/chosen/chosen.jquery.min.js"></script>
+        <script src="~/Content/js/Validation.js"></script>
+        <script src="~/Content/js/Alert.js"></script>
+        <script src="~/Content/sweet alert/sweetalert.min.js"></script>
+    }
