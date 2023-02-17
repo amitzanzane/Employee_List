@@ -1,0 +1,93 @@
+// Run below queries to insert data into already created tables
+
+SET IDENTITY_INSERT [dbo].[Country] ON 
+
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (1, N'India')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (2, N'Canada')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (3, N'Japan')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (4, N'Germany')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (5, N'Switzerland')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (6, N'United States')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (7, N'Australia')
+INSERT [dbo].[Country] ([Row_Id], [CountryName]) VALUES (8, N'New Zealand')
+SET IDENTITY_INSERT [dbo].[Country] OFF
+GO
+
+SET IDENTITY_INSERT [dbo].[State] ON 
+
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (1, 1, N'Maharashtra')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (2, 1, N'Gujrat')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (3, 1, N'Rajasthan')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (4, 1, N'Karnatak')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (5, 1, N'Uttar Pradesh')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (6, 1, N'Meghalaya')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (7, 2, N'Alberta')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (8, 2, N'British Columbia')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (9, 2, N'Manitoba')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (10, 2, N'New Brunswick')
+INSERT [dbo].[State] ([Row_Id], [CountryId], [StateName]) VALUES (11, 2, N'Nunavut')
+SET IDENTITY_INSERT [dbo].[State] OFF
+GO
+
+SET IDENTITY_INSERT [dbo].[City] ON 
+
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (1, 1, N'Pune')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (2, 1, N'Mumbai')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (3, 1, N'Nagpur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (4, 1, N'Kolhapur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (5, 1, N'Jalgaon')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (6, 1, N'Satara')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (7, 2, N'Ahmedabad')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (8, 2, N'Surat')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (9, 2, N'Rajkot')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (10, 2, N'Vadodara')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (11, 2, N'Gandhinagar')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (12, 3, N'Jaipur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (13, 3, N'Jodhpur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (14, 3, N'Udaipur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (15, 3, N'Kota')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (16, 3, N'Ajmair')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (17, 4, N'Bengaluru')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (18, 4, N'Mangalore')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (19, 4, N'Shivamogga')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (20, 4, N'Gulbarga')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (21, 4, N'Belagavi')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (22, 5, N'Lucknow')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (23, 5, N'Prayagraj')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (24, 5, N'Kanpur')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (25, 5, N'Varanasi')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (26, 5, N'Agra')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (27, 6, N'Shillong')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (28, 6, N'Tura')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (29, 6, N'Jowai')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (30, 7, N'Calgary')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (31, 7, N'Edmonton')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (32, 7, N'Red Deer')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (33, 7, N'Lethbridge')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (34, 7, N'Leduc')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (35, 8, N'Vancouver')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (36, 8, N'Victoria')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (37, 8, N'Kelowna')
+INSERT [dbo].[City] ([Row_Id], [StateId], [CityName]) VALUES (38, 8, N'Nanaimo')
+SET IDENTITY_INSERT [dbo].[City] OFF
+GO
+
+SET IDENTITY_INSERT [dbo].[EmployeeMaster] ON 
+
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (3, N'Abhiraj', N'Shinde', 1, 1, 2, N'abhiraj.shinde@neosoftmail.com', N'7208431570', N'ABHIR8901S', N'P0200001', NULL, 1, 1, CAST(N'2021-05-08' AS Date), CAST(N'2021-05-08' AS Date), CAST(N'2021-07-26T10:43:04.440' AS DateTime), CAST(N'2021-08-05T12:09:57.483' AS DateTime), 0, CAST(N'2021-07-30T12:06:34.120' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (5, N'Swaraj', N'Bhosale', 1, 1, 1, N'swar@gmail.com', N'911111332432', N'Swarj1231B', N'P0200004', N'Uploads/Employee/Swaraj_30072021120005.jpg', 1, 0, CAST(N'1994-07-22' AS Date), CAST(N'2021-07-30' AS Date), CAST(N'2021-07-30T12:00:06.647' AS DateTime), CAST(N'2021-07-30T12:43:36.777' AS DateTime), 1, CAST(N'2021-08-05T12:10:05.627' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (6, N'Jayesh', N'Wakodikar', 1, 1, 1, N'jay@gmail.com', N'3131341131', N'jayes3242w', N'4224rfsdfr2', N'Uploads/Employee/Jayesh_30072021121002.jpg', 1, 1, CAST(N'1993-07-19' AS Date), CAST(N'2021-07-29' AS Date), CAST(N'2021-07-30T12:10:02.870' AS DateTime), NULL, 0, CAST(N'2021-07-30T12:12:49.943' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (7, N'Karan', N'Menon', 1, 4, 21, N'kmemon@gmail.com', N'90214312343', N'krnmn3423r', N'P0200005', N'Uploads/Employee/Karan_30072021150404.jpg', 1, 1, CAST(N'1993-07-19' AS Date), NULL, CAST(N'2021-07-30T15:04:05.630' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (8, N'Ranvijay', N'Thakur', 1, 5, 24, N'ran@gmail.com', N'92304234234', N'ranvi4222j', N'P0200006', N'Uploads/Employee/Ranvijay_30072021150843.jpg', 1, 1, CAST(N'1992-07-28' AS Date), CAST(N'2021-07-28' AS Date), CAST(N'2021-07-30T15:08:44.210' AS DateTime), NULL, 0, CAST(N'2021-08-05T12:09:14.467' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (9, N'Vijay', N'Shah', 1, 2, 8, N'vijays@gmail.com', N'9444444444', N'vijay2434s', N'P020000S', N'Uploads/Employee/Vijay_30072021151401.jpeg', 1, 1, CAST(N'1991-07-28' AS Date), NULL, CAST(N'2021-07-30T15:14:01.827' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (10, N'Saiyami', N'Kelkar', 1, 1, 2, N'saiyami@gmail.com', N'91912332432', N'saiya2342k', N'P020000K', N'Uploads/Employee/Saiyami_30072021151609.jpg', 0, 1, CAST(N'1992-07-29' AS Date), NULL, CAST(N'2021-07-30T15:16:09.927' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (11, N'Pranali ', N'Singh', 1, 6, 27, N'pranali@gmail.com', N'2432234232', N'prana2432l', N'P020000P', N'Uploads/Employee/Pranali _30072021151716.jpg', 0, 1, CAST(N'1992-09-28' AS Date), NULL, CAST(N'2021-07-30T15:17:16.730' AS DateTime), NULL, 0, CAST(N'2021-08-05T12:03:33.600' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (12, N'Rohny', N'Robert', 2, 7, 33, N'ron@gmail.com', N'87686557578', N'rohny3432r', N'P020000R', N'Uploads/Employee/Rohny_30072021152320.jpg', 1, 1, CAST(N'1992-12-28' AS Date), CAST(N'2021-07-30' AS Date), CAST(N'2021-07-30T15:23:20.627' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (13, N'Dwyane', N'Johnson', 2, 8, 38, N'dwan@gmail.com', N'23423423423', N'dwayn4434e', N'P020000D', N'Uploads/Employee/Dwyane_30072021152526.jpg', 1, 1, CAST(N'2021-08-05' AS Date), CAST(N'2021-08-05' AS Date), CAST(N'2021-07-30T15:25:27.007' AS DateTime), CAST(N'2021-08-05T17:59:14.517' AS DateTime), 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (14, N'Boni', N'Kapoor', 2, 8, 37, N'boni@gmail.com', N'345452423', N'bonyy3342K', N'P020000B', N'Uploads/Employee/Boni_30072021152812.jpg', 1, 1, CAST(N'1990-07-28' AS Date), NULL, CAST(N'2021-07-30T15:28:13.130' AS DateTime), NULL, 0, CAST(N'2021-07-30T16:00:43.330' AS DateTime))
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (15, N'Amar', N'Puri', 2, 8, 37, N'amar@gmail.com', N'759654679', N'amard2442u', N'P020000A', N'Uploads/Employee/Amar_30072021152958.jpg', 1, 1, CAST(N'1994-07-12' AS Date), CAST(N'2021-04-08' AS Date), CAST(N'2021-07-30T15:29:58.990' AS DateTime), CAST(N'2021-08-05T17:46:54.143' AS DateTime), 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (16, N'Robert', N'Knipper', 2, 7, 31, N'robert@gmail.com', N'986867678699', N'rober5424t', N'P020000T', N'Uploads/Employee/Robert_30072021153328.jpg', 1, 1, CAST(N'1989-07-28' AS Date), NULL, CAST(N'2021-07-30T15:33:28.833' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (17, N'Poul', N'Walker', 2, 7, 34, N'paul@gmail.com', N'4543435435', N'paulw4353j', N'P020000W', N'Uploads/Employee/Poul_30072021153513.jpg', 1, 1, CAST(N'1989-07-28' AS Date), NULL, CAST(N'2021-07-30T15:35:13.847' AS DateTime), NULL, 0, NULL)
+INSERT [dbo].[EmployeeMaster] ([Row_Id], [FirstName], [LastName], [CountryId], [StateId], [CityId], [EmailAddress], [MobileNumber], [PanNumber], [PassportNumber], [ProfileImage], [Gender], [IsActive], [DateOfBirth], [DateOfJoinee], [CreatedDate], [UpdatedDate], [IsDeleted], [DeletedDate]) VALUES (18, N'Harry', N'Sharma', 2, 8, 38, N'harry@gmail.com', N'245323424523', N'harry2342S', N'P020000H', N'Uploads/Employee/Harry_84202130139PM.png', 1, 1, CAST(N'1991-04-08' AS Date), CAST(N'2021-03-08' AS Date), CAST(N'2021-08-04T15:01:40.167' AS DateTime), CAST(N'2021-08-04T15:02:01.193' AS DateTime), 0, NULL)
+SET IDENTITY_INSERT [dbo].[EmployeeMaster] OFF
+GO
